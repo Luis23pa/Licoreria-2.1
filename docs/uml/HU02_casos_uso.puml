@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+actor Administrador
+rectangle "Sistema Licorería Al Paso" {
+  usecase "Gestionar productos" as UC_Gestionar
+  usecase "Registrar producto" as UC_Registrar
+  usecase "Editar producto" as UC_Editar
+  usecase "Validar datos" as UC_Validar
+  usecase "Validar código único" as UC_Codigo
+  usecase "Desactivar producto" as UC_Desactivar
+  usecase "Mostrar error de validación" as UC_Error
+}
+Administrador --> UC_Gestionar
+UC_Gestionar .> UC_Registrar : <<include>>
+UC_Gestionar .> UC_Editar : <<include>>
+UC_Registrar .> UC_Validar : <<include>>
+UC_Registrar .> UC_Codigo : <<include>>
+UC_Editar .> UC_Validar : <<include>>
+UC_Desactivar .> UC_Gestionar : <<extend>>
+UC_Error .> UC_Registrar : <<extend>>
+@enduml

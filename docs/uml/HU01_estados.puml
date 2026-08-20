@@ -1,0 +1,9 @@
+@startuml
+[*] --> NoAutenticado
+NoAutenticado --> Validando : enviar credenciales
+Validando --> Autenticado : credenciales válidas\ny usuario activo
+Validando --> ErrorAutenticacion : credenciales inválidas\no usuario inactivo
+ErrorAutenticacion --> NoAutenticado : reintentar
+Autenticado --> NoAutenticado : cerrar sesión
+Autenticado --> [*] : finalizar aplicación
+@enduml

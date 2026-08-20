@@ -1,0 +1,25 @@
+@startuml
+actor Administrador
+boundary "ProductoUI" as UI
+control "ProductoController" as C
+database "Base de Datos" as DB
+Administrador -> UI : completarFormulario(datosProducto)
+UI -> C : guardarProducto(datosProducto)
+C -> C : validarDatos(datosProducto)
+alt Datos válidos
+    C -> DB : existeCodigo(codigo)
+    DB --> C : resultado
+    alt Código disponible
+        C -> DB : insertarProducto(datosProducto)
+        DB --> C : productoGuardado
+        C --> UI : mostrarConfirmacion()
+        UI --> Administrador : productoRegistrado()
+    else Código duplicado
+        C --> UI : mostrarError("Código ya registrado")
+        UI --> Administrador : corregirCodigo()
+    end
+else Datos inválidos
+    C --> UI : mostrarErroresValidacion()
+    UI --> Administrador : corregirCampos()
+end
+@enduml

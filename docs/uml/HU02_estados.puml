@@ -1,0 +1,11 @@
+@startuml
+[*] --> Borrador
+Borrador --> Validando : guardar
+Validando --> Activo : datos válidos\ny código único
+Validando --> Borrador : error de validación
+Activo --> Editando : editar
+Editando --> Validando : guardar cambios
+Activo --> Inactivo : desactivar
+Inactivo --> Activo : reactivar
+Activo --> [*]
+@enduml

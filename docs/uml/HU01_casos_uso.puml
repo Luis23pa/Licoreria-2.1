@@ -1,0 +1,16 @@
+@startuml
+left to right direction
+actor "Usuario autorizado" as Usuario
+rectangle "Sistema Licorería Al Paso" {
+  usecase "Iniciar sesión" as UC_Login
+  usecase "Validar credenciales" as UC_Validar
+  usecase "Validar usuario activo" as UC_Activo
+  usecase "Mostrar mensaje de error" as UC_Error
+  usecase "Acceder al Dashboard" as UC_Dashboard
+}
+Usuario --> UC_Login
+UC_Login .> UC_Validar : <<include>>
+UC_Validar .> UC_Activo : <<include>>
+UC_Error .> UC_Login : <<extend>>
+UC_Dashboard .> UC_Login : <<extend>>
+@enduml

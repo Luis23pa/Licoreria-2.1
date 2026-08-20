@@ -1,0 +1,51 @@
+@startuml
+class Venta {
+  - idVenta : int
+  - fechaHora : datetime
+  - total : decimal
+  - idUsuario : int
+  + calcularTotal() : decimal
+  + confirmarVenta() : bool
+}
+class DetalleVenta {
+  - idDetalle : int
+  - cantidad : int
+  - precioUnitario : decimal
+  - subtotal : decimal
+  + calcularSubtotal(cantidad : int, precio : decimal) : decimal
+}
+class Producto {
+  - idProducto : int
+  - codigo : string
+  - nombre : string
+  - precioVenta : decimal
+  - stockActual : int
+  + tieneStock(cantidad : int) : bool
+  + descontarStock(cantidad : int) : void
+}
+class VentaController {
+  + buscarProducto(criterio : string) : List<Producto>
+  + agregarProducto(idProducto : int, cantidad : int) : bool
+  + calcularSubtotal(cantidad : int, precio : decimal) : decimal
+  + calcularTotal(detalle : List<DetalleVenta>) : decimal
+  + registrarVenta(detalle : List<DetalleVenta>) : bool
+}
+class VentaUI {
+  + mostrarResultados(productos : List<Producto>) : void
+  + actualizarDetalleVenta() : void
+  + mostrarConfirmacion(total : decimal) : void
+  + mostrarError(mensaje : string) : void
+}
+class VentaRepository {
+  + guardarVenta(venta : Venta) : Venta
+  + guardarDetalles(detalles : List<DetalleVenta>) : bool
+  + descontarStock(detalles : List<DetalleVenta>) : bool
+  + obtenerStock(idProducto : int) : int
+}
+Venta "1" *-- "1..*" DetalleVenta
+DetalleVenta "*" --> "1" Producto
+VentaUI --> VentaController
+VentaController --> VentaRepository
+VentaController --> Venta
+VentaController --> DetalleVenta
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+class Producto {
+  - idProducto : int
+  - codigo : string
+  - nombre : string
+  - stockActual : int
+  + aumentarStock(cantidad : int) : void
+}
+class MovimientoInventario {
+  - idMovimiento : int
+  - tipoMovimiento : string
+  - cantidad : int
+  - stockAnterior : int
+  - stockResultante : int
+  - fechaHora : datetime
+  - referencia : string
+  - observacion : string
+  + calcularStockResultante(stockActual : int, cantidad : int) : int
+}
+class InventarioController {
+  + consultarStock(idProducto : int) : int
+  + registrarEntrada(idProducto : int, cantidad : int, referencia : string, observacion : string) : bool
+  + validarCantidad(cantidad : int) : bool
+  + calcularStockResultante(stockActual : int, cantidad : int) : int
+}
+class InventarioUI {
+  + mostrarStockActual(stock : int) : void
+  + mostrarConfirmacion(stockResultante : int) : void
+  + mostrarError(mensaje : string) : void
+}
+class InventarioRepository {
+  + obtenerProducto(idProducto : int) : Producto
+  + actualizarStock(idProducto : int, nuevoStock : int) : bool
+  + registrarMovimiento(movimiento : MovimientoInventario) : bool
+}
+Producto "1" -- "0..*" MovimientoInventario : genera >
+InventarioUI --> InventarioController
+InventarioController --> InventarioRepository
+InventarioController --> MovimientoInventario
+InventarioRepository --> Producto
+@enduml

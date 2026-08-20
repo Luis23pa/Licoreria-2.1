@@ -1,0 +1,37 @@
+@startuml
+class Producto {
+  - idProducto : int
+  - codigo : string
+  - nombre : string
+  - marca : string
+  - categoria : string
+  - presentacion : string
+  - precioVenta : decimal
+  - stockActual : int
+  - stockMinimo : int
+  - estado : bool
+  + validarDatos() : bool
+  + actualizarDatos() : void
+  + desactivar() : void
+}
+class ProductoController {
+  + guardarProducto(datos : Producto) : bool
+  + validarDatos(datos : Producto) : bool
+  + editarProducto(datos : Producto) : bool
+  + desactivarProducto(idProducto : int) : bool
+}
+class ProductoUI {
+  + completarFormulario() : Producto
+  + mostrarConfirmacion() : void
+  + mostrarError(mensaje : string) : void
+}
+class ProductoRepository {
+  + existeCodigo(codigo : string) : bool
+  + insertarProducto(producto : Producto) : Producto
+  + actualizarProducto(producto : Producto) : bool
+}
+ProductoUI --> ProductoController
+ProductoController --> ProductoRepository
+ProductoController --> Producto
+ProductoRepository --> Producto
+@enduml

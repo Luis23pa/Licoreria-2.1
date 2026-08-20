@@ -1,0 +1,18 @@
+@startuml
+actor Usuario
+boundary "LoginUI" as UI
+control "AuthController" as C
+database "Base de Datos" as DB
+Usuario -> UI : ingresarCredenciales(usuario, contraseña)
+UI -> C : iniciarSesion(usuario, contraseña)
+C -> DB : buscarUsuario(usuario)
+DB --> C : datosUsuario
+alt Credenciales válidas y usuario activo
+    C -> C : validarCredenciales()
+    C --> UI : accesoPermitido(usuario)
+    UI --> Usuario : mostrarDashboard()
+else Credenciales inválidas o usuario inactivo
+    C --> UI : mostrarError("Credenciales inválidas")
+    UI --> Usuario : solicitarCorrección()
+end
+@enduml

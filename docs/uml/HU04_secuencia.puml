@@ -1,0 +1,35 @@
+@startuml
+actor Vendedor
+boundary "VentaUI" as UI
+control "VentaController" as C
+database "Base de Datos" as DB
+Vendedor -> UI : buscarProducto(criterio)
+UI -> C : buscarProducto(criterio)
+C -> DB : consultarProductos(criterio)
+DB --> C : productos
+C --> UI : mostrarResultados(productos)
+Vendedor -> UI : agregarProducto(idProducto, cantidad)
+UI -> C : agregarProducto(idProducto, cantidad)
+C -> DB : obtenerStock(idProducto)
+DB --> C : stockDisponible
+alt Stock suficiente
+    C -> C : calcularSubtotal(cantidad, precio)
+    C --> UI : actualizarDetalleVenta()
+else Stock insuficiente
+    C --> UI : mostrarError("Stock insuficiente")
+end
+Vendedor -> UI : confirmarVenta()
+UI -> C : registrarVenta(detalle)
+alt Venta válida y con productos
+    C -> C : calcularTotal(detalle)
+    C -> DB : guardarVenta(venta)
+    C -> DB : guardarDetalles(detalle)
+    C -> DB : descontarStock(detalle)
+    DB --> C : ventaRegistrada
+    C --> UI : mostrarConfirmacion(total)
+    UI --> Vendedor : ventaCompletada()
+else Venta inválida
+    C --> UI : mostrarErroresValidacion()
+    UI --> Vendedor : corregirVenta()
+end
+@enduml

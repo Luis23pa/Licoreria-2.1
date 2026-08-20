@@ -1,0 +1,22 @@
+@startuml
+left to right direction
+actor "Encargado de Inventario" as Encargado
+rectangle "Sistema Licorería Al Paso" {
+  usecase "Registrar entrada de inventario" as UC_Entrada
+  usecase "Buscar producto" as UC_Buscar
+  usecase "Consultar stock actual" as UC_Stock
+  usecase "Validar cantidad" as UC_Validar
+  usecase "Calcular stock resultante" as UC_Calcular
+  usecase "Actualizar stock" as UC_Actualizar
+  usecase "Registrar movimiento" as UC_Movimiento
+  usecase "Mostrar error" as UC_Error
+}
+Encargado --> UC_Entrada
+UC_Entrada .> UC_Buscar : <<include>>
+UC_Entrada .> UC_Stock : <<include>>
+UC_Entrada .> UC_Validar : <<include>>
+UC_Entrada .> UC_Calcular : <<include>>
+UC_Entrada .> UC_Actualizar : <<include>>
+UC_Entrada .> UC_Movimiento : <<include>>
+UC_Error .> UC_Entrada : <<extend>>
+@enduml

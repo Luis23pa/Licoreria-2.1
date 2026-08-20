@@ -1,0 +1,25 @@
+@startuml
+actor Encargado
+boundary "InventarioUI" as UI
+control "InventarioController" as C
+database "Base de Datos" as DB
+Encargado -> UI : seleccionarProducto(idProducto)
+UI -> C : consultarStock(idProducto)
+C -> DB : obtenerProducto(idProducto)
+DB --> C : producto(stockActual)
+C --> UI : mostrarStockActual(stockActual)
+Encargado -> UI : ingresarCantidad(cantidad)
+UI -> C : registrarEntrada(idProducto, cantidad, referencia, observacion)
+C -> C : validarCantidad(cantidad)
+alt Cantidad válida (> 0)
+    C -> C : calcularStockResultante(stockActual, cantidad)
+    C -> DB : actualizarStock(idProducto, stockResultante)
+    C -> DB : registrarMovimiento(datosMovimiento)
+    DB --> C : movimientoRegistrado
+    C --> UI : mostrarConfirmacion(stockResultante)
+    UI --> Encargado : entradaRegistrada()
+else Cantidad inválida
+    C --> UI : mostrarError("La cantidad debe ser mayor a cero")
+    UI --> Encargado : corregirCantidad()
+end
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+actor Vendedor
+rectangle "Sistema Licorería Al Paso" {
+  usecase "Registrar venta" as UC_Venta
+  usecase "Buscar producto" as UC_Buscar
+  usecase "Agregar producto" as UC_Agregar
+  usecase "Modificar cantidad" as UC_Modificar
+  usecase "Quitar producto" as UC_Quitar
+  usecase "Validar stock" as UC_Stock
+  usecase "Calcular total" as UC_Total
+  usecase "Confirmar venta" as UC_Confirmar
+  usecase "Descontar stock" as UC_Descontar
+  usecase "Mostrar error de stock" as UC_Error
+}
+Vendedor --> UC_Venta
+UC_Venta .> UC_Buscar : <<include>>
+UC_Venta .> UC_Agregar : <<include>>
+UC_Modificar .> UC_Venta : <<extend>>
+UC_Quitar .> UC_Venta : <<extend>>
+UC_Confirmar .> UC_Stock : <<include>>
+UC_Confirmar .> UC_Total : <<include>>
+UC_Confirmar .> UC_Descontar : <<include>>
+UC_Error .> UC_Confirmar : <<extend>>
+@enduml

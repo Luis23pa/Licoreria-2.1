@@ -1,0 +1,10 @@
+@startuml
+[*] --> Iniciada
+Iniciada --> ProductoSeleccionado : seleccionar producto
+ProductoSeleccionado --> DatosIngresados : ingresar cantidad
+DatosIngresados --> Validando : confirmar
+Validando --> Aplicada : cantidad válida
+Validando --> DatosIngresados : cantidad inválida
+Aplicada --> Registrada : guardar movimiento
+Registrada --> [*]
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+class Usuario {
+  - idUsuario : int
+  - nombreUsuario : string
+  - passwordHash : string
+  - estado : bool
+  - rol : string
+  + validarCredenciales(contraseña : string) : bool
+  + estaActivo() : bool
+}
+class AuthController {
+  + iniciarSesion(usuario : string, contraseña : string) : bool
+  + validarCredenciales(usuario : Usuario, contraseña : string) : bool
+}
+class LoginUI {
+  + ingresarCredenciales() : void
+  + mostrarDashboard() : void
+  + mostrarError(mensaje : string) : void
+}
+class UsuarioRepository {
+  + buscarUsuario(usuario : string) : Usuario
+}
+LoginUI --> AuthController
+AuthController --> UsuarioRepository
+UsuarioRepository --> Usuario
+AuthController --> Usuario
+@enduml

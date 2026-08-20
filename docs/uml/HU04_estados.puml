@@ -1,0 +1,13 @@
+@startuml
+[*] --> Borrador
+Borrador --> ConProductos : agregar producto
+ConProductos --> ConProductos : modificar cantidad
+ConProductos --> ConProductos : quitar producto
+ConProductos --> Validando : confirmar venta
+Validando --> Confirmada : stock suficiente\ny datos válidos
+Validando --> ConProductos : error de stock\no validación
+ConProductos --> Cancelada : cancelar venta
+Confirmada --> Registrada : guardar venta\ny descontar stock
+Cancelada --> [*]
+Registrada --> [*]
+@enduml
