@@ -16,3 +16,24 @@ del Sistema de Gestión para la Licorería Al Paso.
 Todos los recursos de diseño se encuentran disponibles en:
 
 [📁 Carpeta de Diseño](docs/design/)
+
+## Diseño Detallado - Actividad 6
+
+En esta etapa se realizó el modelado técnico de las Historias de Usuario
+correspondientes al Sprint 1 del Sistema de Gestión para la Licorería Al Paso.
+
+Los modelos fueron desarrollados mediante PlantUML e incluyen:
+
+- Diagramas de Casos de Uso
+- Diagramas de Secuencia
+- Diagramas de Estados
+- Diagramas de Clases
+
+### Historias modeladas
+
+- HU01 - Iniciar sesión
+- HU02 - Gestionar productos
+- HU03 - Registrar entradas de inventario
+- HU04 - Registrar venta
+
+📁 [Ver modelos UML del Sprint 1](docs/uml/)
