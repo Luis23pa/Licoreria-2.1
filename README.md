@@ -40,7 +40,7 @@ Los modelos fueron desarrollados mediante PlantUML e incluyen:
 
 Diseño físico correspondiente a la Actividad 7.
 
-📁 **Carpeta:** (/docs/database/)
+📁 [Ver modelos de la Base de Datos](docs/database/)
 
 ### Recursos
 
