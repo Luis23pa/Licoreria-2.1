@@ -35,3 +35,14 @@ Los modelos fueron desarrollados mediante PlantUML e incluyen:
 - HU04 - Registrar venta
 
 📁 [Ver modelos UML del Sprint 1](docs/uml/)
+
+## Base de Datos
+
+Diseño físico correspondiente a la Actividad 7.
+
+📁 **Carpeta:** `/docs/database/`
+
+### Recursos
+
+- [Modelo Físico](docs/database/modelo_fisico_licoreria_al_paso.png)
+- [Script SQL](docs/database/database_licoreria_al_paso.sql)
