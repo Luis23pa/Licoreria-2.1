@@ -6,8 +6,7 @@ del Sistema de Gestión para la Licorería Al Paso.
 
 ### Recursos de diseño
 - [Diagrama de Navegacion](docs/desing/01_diagrama_navegacion.png)
-- [Diagrama de Navegación](01_diagrama_navegacion.png)
-- [Wireframe de Login](02_wireframe_login.png)
+- [Wireframe de Login](docs/desing/02_wireframe_login.png)
 - [Wireframe de Listado de Productos](03_wireframe_listado_productos.png)
 - [Wireframe de Registro de Producto](04_wireframe_registro_producto.png)
 - [Wireframe de Registro de Venta](05_wireframe_registro_venta.png)
