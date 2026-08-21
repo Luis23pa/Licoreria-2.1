@@ -5,7 +5,7 @@ Actividad 5: Arquitectura de Interfaz y Prototipado Centrado en el Usuario
 del Sistema de Gestión para la Licorería Al Paso.
 
 ### Recursos de diseño
-
+- [Diagrama de Navegacion](docs/desing/01_diagrama_navegacion.png)
 - [Diagrama de Navegación](01_diagrama_navegacion.png)
 - [Wireframe de Login](02_wireframe_login.png)
 - [Wireframe de Listado de Productos](03_wireframe_listado_productos.png)
