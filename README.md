@@ -4,18 +4,29 @@ En esta sección se encuentran los artefactos correspondientes a la
 Actividad 5: Arquitectura de Interfaz y Prototipado Centrado en el Usuario
 del Sistema de Gestión para la Licorería Al Paso.
 
-### Recursos de diseño
+### 1. Diagrama de Navegación
 
-- [Diagrama de Navegación](docs/design/01_diagrama_navegacion.png)
-- [Wireframe de Login](docs/design/02_wireframe_login.png)
-- [Wireframe de Listado de Productos](docs/design/03_wireframe_listado_productos.png)
-- [Wireframe de Registro de Producto](docs/design/04_wireframe_registro_producto.png)
-- [Wireframe de Registro de Venta](docs/design/05_wireframe_registro_venta.png)
-- [Wireframe de Reportes](docs/design/06_wireframe_reporte.png)
+![Diagrama de Navegación](01_diagrama_navegacion.png)
 
-Todos los recursos de diseño se encuentran disponibles en:
+### 2. Wireframe de Login
 
-[📁 Carpeta de Diseño](docs/design/)
+![Wireframe de Login](02_wireframe_login.png)
+
+### 3. Wireframe de Listado de Productos
+
+![Wireframe de Listado de Productos](03_wireframe_listado_productos.png)
+
+### 4. Wireframe de Registro de Producto
+
+![Wireframe de Registro de Producto](04_wireframe_registro_producto.png)
+
+### 5. Wireframe de Registro de Venta
+
+![Wireframe de Registro de Venta](05_wireframe_registro_venta.png)
+
+### 6. Wireframe de Reportes
+
+![Wireframe de Reportes](06_wireframe_reporte.png)
 
 ## Diseño Detallado - Actividad 6
 
