@@ -1,47 +1,16 @@
-## Diseño de Interfaz
+# React + Vite
 
-En esta sección se encuentran los artefactos correspondientes a la
-Actividad 5: Arquitectura de Interfaz y Prototipado Centrado en el Usuario
-del Sistema de Gestión para la Licorería Al Paso.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-### Recursos de diseño
-- [Diagrama de Navegacion](docs/desing/01_diagrama_navegacion.png)
-- [Wireframe de Login](docs/desing/02_wireframe_login.png)
-- [Wireframe de Listado de Productos](docs/desing/03_wireframe_listado_productos.png)
-- [Wireframe de Registro de Producto](docs/desing/04_wireframe_registro_producto.png)
-- [Wireframe de Registro de Venta](docs/desing/05_wireframe_registro_venta.png)
-- [Wireframe de Reportes](docs/desing/06_wireframe_reporte.png)
+Currently, two official plugins are available:
 
-Todos los recursos de diseño se encuentran en esta carpeta.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Diseño Detallado - Actividad 6
+## React Compiler
 
-En esta etapa se realizó el modelado técnico de las Historias de Usuario
-correspondientes al Sprint 1 del Sistema de Gestión para la Licorería Al Paso.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-Los modelos fueron desarrollados mediante PlantUML e incluyen:
+## Expanding the Oxlint configuration
 
-- Diagramas de Casos de Uso
-- Diagramas de Secuencia
-- Diagramas de Estados
-- Diagramas de Clases
-
-### Historias modeladas
-
-- HU01 - Iniciar sesión
-- HU02 - Gestionar productos
-- HU03 - Registrar entradas de inventario
-- HU04 - Registrar venta
-
-📁 [Ver modelos UML del Sprint 1](docs/uml/)
-
-## Base de Datos
-
-Diseño físico correspondiente a la Actividad 7.
-
-📁 [Ver modelos de la Base de Datos](docs/database/)
-
-### Recursos
-
-- [Modelo Físico](docs/database/modelo_fisico_licoreria_al_paso.png)
-- [Script SQL](docs/database/database_licoreria_al_paso.sql)
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
