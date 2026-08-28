@@ -933,5 +933,123 @@ Antes de generar o modificar código:
 9.  informar archivos modificados;
 10. corregir errores antes de considerar terminada la tarea.
 
+## 22. Marco Legal y Ética de Datos
+
+El Sistema de Gestión para la Licorería Al Paso debe proteger la
+confidencialidad, integridad y disponibilidad de la información
+almacenada y procesada por la aplicación.
+
+### 22.1 Protección de la privacidad y Acción de Protección de Privacidad
+
+El sistema reconoce el derecho de los usuarios a conocer, revisar,
+rectificar y solicitar la eliminación de los datos personales
+registrados sobre ellos, de conformidad con el artículo 130 de la
+Constitución Política del Estado Plurinacional de Bolivia.
+
+Para este propósito:
+
+- Los datos personales deberán estar disponibles únicamente para
+  usuarios autorizados.
+- Los usuarios podrán solicitar la corrección de información incorrecta.
+- Las solicitudes de eliminación deberán evaluarse considerando las
+  obligaciones de conservación de registros comerciales y de auditoría.
+- El sistema deberá impedir el acceso no autorizado a datos personales.
+- Toda consulta o modificación de información sensible deberá quedar
+  registrada cuando corresponda.
+
+### 22.2 Ley N.º 164 de Telecomunicaciones y TIC
+
+El sistema deberá implementar medidas orientadas a proteger la
+privacidad de las personas y la seguridad de la información utilizada
+por la plataforma.
+
+Las medidas técnicas consideradas son:
+
+- Autenticación obligatoria.
+- Control de acceso basado en roles.
+- Uso de conexiones seguras HTTPS/TLS.
+- Prohibición de almacenar contraseñas en texto plano.
+- Registro de operaciones relevantes.
+- Validación de entradas antes de procesarlas.
+- Protección de credenciales y variables de entorno.
+- Uso de estándares abiertos y tecnologías interoperables cuando sea
+  técnicamente posible.
+
+### 22.3 Prevención del acceso y uso indebido de datos
+
+Para reducir riesgos relacionados con el acceso, modificación,
+eliminación o uso no autorizado de datos informáticos, el sistema debe:
+
+- aplicar permisos mínimos necesarios;
+- diferenciar los roles Administrador, Vendedor y Encargado de Inventario;
+- registrar inicios de sesión y operaciones críticas;
+- bloquear acciones no autorizadas;
+- preservar la trazabilidad de ventas, movimientos de inventario y
+  modificaciones importantes;
+- no exponer claves privadas en el frontend ni en GitHub.
+
+### 22.4 Tratamiento de credenciales
+
+Las contraseñas nunca deben almacenarse directamente en campos de texto
+plano.
+
+La autenticación debe delegarse a un mecanismo seguro, como Supabase
+Auth, que almacena hashes de contraseña utilizando mecanismos
+especializados de autenticación.
+
+El frontend nunca tendrá acceso a la contraseña original almacenada.
+
+### 22.5 Datos sensibles y minimización
+
+El sistema solo recopilará los datos estrictamente necesarios para su
+operación.
+
+Actualmente los datos principales son:
+
+- datos de usuarios del sistema;
+- productos y categorías;
+- ventas;
+- detalles de venta;
+- movimientos de inventario;
+- registros de auditoría.
+
+No se recopilarán datos personales del comprador si no existe una
+necesidad funcional o legal claramente definida.
+
+### 22.6 Auditoría y trazabilidad
+
+El sistema contará con una tabla `logs_auditoria` destinada a registrar
+operaciones relevantes.
+
+Cada registro podrá incluir:
+
+- usuario responsable;
+- fecha y hora;
+- acción realizada;
+- entidad afectada;
+- identificador del registro;
+- resultado de la operación;
+- dirección IP cuando esté disponible;
+- información técnica mínima necesaria para auditoría.
+
+Los registros de auditoría no deberán ser modificables desde la
+interfaz normal del sistema.
+
+### 22.7 Principios éticos
+
+El sistema seguirá los principios de:
+
+- minimización de datos;
+- acceso por necesidad;
+- transparencia;
+- trazabilidad;
+- responsabilidad;
+- seguridad por diseño;
+- privacidad por diseño.
+
+El uso de inteligencia artificial durante el desarrollo no sustituye la
+responsabilidad del equipo sobre las decisiones de arquitectura,
+seguridad y cumplimiento.
+
 **Este PRD constituye la fuente principal de verdad para la
 implementación del MVP de Licorería "Al Paso".**
