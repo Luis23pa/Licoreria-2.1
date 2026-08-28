@@ -934,7 +934,7 @@ Antes de generar o modificar código:
 10. corregir errores antes de considerar terminada la tarea.
 ------------------------------------------------------------------------
 
-## 22. Marco Legal y Ética de Datos
+# 22. Marco Legal y Ética de Datos
 
 El Sistema de Gestión para la Licorería Al Paso debe proteger la
 confidencialidad, integridad y disponibilidad de la información
