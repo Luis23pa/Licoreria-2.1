@@ -932,6 +932,7 @@ Antes de generar o modificar código:
 8.  ejecutar pruebas;
 9.  informar archivos modificados;
 10. corregir errores antes de considerar terminada la tarea.
+------------------------------------------------------------------------
 
 ## 22. Marco Legal y Ética de Datos
 
